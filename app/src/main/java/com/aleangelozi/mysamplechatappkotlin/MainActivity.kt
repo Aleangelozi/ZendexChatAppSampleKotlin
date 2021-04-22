@@ -21,8 +21,11 @@ class MainActivity : AppCompatActivity() {
         mChatButton.setOnClickListener {
             val chatConfiguration = ChatConfiguration.builder()
                     .withPreChatFormEnabled(true)
+                    .withTranscriptEnabled(false)
                     .withNameFieldStatus(PreChatFormFieldStatus.HIDDEN)
                     .withEmailFieldStatus(PreChatFormFieldStatus.HIDDEN)
+                    .withPhoneFieldStatus(PreChatFormFieldStatus.HIDDEN)
+                    .withDepartmentFieldStatus(PreChatFormFieldStatus.HIDDEN)
                     .build()
 
             MessagingActivity.builder()
