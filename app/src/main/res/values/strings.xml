@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Sample Chat App Kotlin</string>
+    <string name="chat_button">Chat</string>
+</resources>
