@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import zendesk.chat.Chat
-import zendesk.chat.ChatConfiguration
 import zendesk.chat.ChatEngine
-import zendesk.chat.PreChatFormFieldStatus
 import zendesk.messaging.MessagingActivity
 
 class MainActivity : AppCompatActivity() {
@@ -19,15 +17,9 @@ class MainActivity : AppCompatActivity() {
         val mChatButton = findViewById<Button>(R.id.chat_button)
 
         mChatButton.setOnClickListener {
-            val chatConfiguration = ChatConfiguration.builder()
-                    .withPreChatFormEnabled(true)
-                    .withNameFieldStatus(PreChatFormFieldStatus.HIDDEN)
-                    .withEmailFieldStatus(PreChatFormFieldStatus.HIDDEN)
-                    .build()
-
             MessagingActivity.builder()
                     .withEngines(ChatEngine.engine())
-                    .show(this,chatConfiguration)
+                    .show(this)
         }
     }
 }
