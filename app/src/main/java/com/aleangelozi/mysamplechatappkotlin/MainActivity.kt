@@ -17,9 +17,13 @@ class MainActivity : AppCompatActivity() {
         val mChatButton = findViewById<Button>(R.id.chat_button)
 
         mChatButton.setOnClickListener {
-            MessagingActivity.builder()
-                    .withEngines(ChatEngine.engine())
-                    .show(this)
+            initializeChatSdk()
         }
+    }
+
+    private fun initializeChatSdk(){
+        MessagingActivity.builder()
+                .withEngines(ChatEngine.engine())
+                .show(this)
     }
 }
