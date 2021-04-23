@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
         val mChatButton = findViewById<Button>(R.id.chat_button)
 
         mChatButton.setOnClickListener {
-            chatInitialize()
+            initializeChatSdk()
         }
     }
 
-    private fun chatInitialize() {
+    private fun initializeChatSdk() {
         val chatConfiguration = ChatConfiguration.builder()
                 .withPreChatFormEnabled(true)
                 .withTranscriptEnabled(false)
