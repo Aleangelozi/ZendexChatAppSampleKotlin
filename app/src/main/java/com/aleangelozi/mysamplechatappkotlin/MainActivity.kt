@@ -19,18 +19,22 @@ class MainActivity : AppCompatActivity() {
         val mChatButton = findViewById<Button>(R.id.chat_button)
 
         mChatButton.setOnClickListener {
-            val chatConfiguration = ChatConfiguration.builder()
-                    .withPreChatFormEnabled(true)
-                    .withTranscriptEnabled(false)
-                    .withNameFieldStatus(PreChatFormFieldStatus.HIDDEN)
-                    .withEmailFieldStatus(PreChatFormFieldStatus.HIDDEN)
-                    .withPhoneFieldStatus(PreChatFormFieldStatus.HIDDEN)
-                    .withDepartmentFieldStatus(PreChatFormFieldStatus.HIDDEN)
-                    .build()
-
-            MessagingActivity.builder()
-                    .withEngines(ChatEngine.engine())
-                    .show(this,chatConfiguration)
+            chatInitialize()
         }
+    }
+
+    private fun chatInitialize() {
+        val chatConfiguration = ChatConfiguration.builder()
+                .withPreChatFormEnabled(true)
+                .withTranscriptEnabled(false)
+                .withNameFieldStatus(PreChatFormFieldStatus.HIDDEN)
+                .withEmailFieldStatus(PreChatFormFieldStatus.HIDDEN)
+                .withPhoneFieldStatus(PreChatFormFieldStatus.HIDDEN)
+                .withDepartmentFieldStatus(PreChatFormFieldStatus.HIDDEN)
+                .build()
+
+        MessagingActivity.builder()
+                .withEngines(ChatEngine.engine())
+                .show(this,chatConfiguration)
     }
 }
