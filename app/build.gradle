@@ -48,6 +48,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //    Zendesk Chat SDK
-    implementation group: 'com.zendesk', name: 'chat', version: '2.0.0'
-    implementation group: 'com.zendesk', name: 'messaging', version: '4.2.1'
+    implementation group: 'com.zendesk', name: 'chat', version: '3.1.0'
+    implementation group: 'com.zendesk', name: 'messaging', version: '5.1.0'
 }
