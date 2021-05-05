@@ -1,10 +1,13 @@
 package com.aleangelozi.mysamplechatappkotlin
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import zendesk.chat.*
 import zendesk.messaging.MessagingActivity
+
+private const val TAG = "ActivityOverrides"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         mChatButton.setOnClickListener {
             initializeChatSdk()
         }
+
+        Log.d(TAG, "onCreate")
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Log.d(TAG, "onResume")
     }
 
     private fun initializeChatSdk() {
