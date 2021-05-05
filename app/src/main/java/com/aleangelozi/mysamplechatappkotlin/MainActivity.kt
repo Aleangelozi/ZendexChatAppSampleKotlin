@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Chat.INSTANCE.init(this, "jkkJEDT18TAduH0eOJ2fL422Etj1IJxR",
-            "a0ec348c439fef74d030281ba454857d3f4583c8d2756064")
+        Chat.INSTANCE.init(this, BuildConfig.ZENDESK_CHAT_ACCOUNT_KEY,
+            BuildConfig.ZENDEX_APP_ID)
 
         val mChatButton = findViewById<Button>(R.id.chat_button)
 
@@ -23,10 +23,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeChatSdk() {
 
+        val name = "Alessandro Angelozi Ribeiro"
+
+        val newName = name.substringBefore(' ')
+
         val profileProvider = Chat.INSTANCE.providers()?.profileProvider()
 
         val visitorInfo = VisitorInfo.builder()
-            .withName("Renato")
+            .withName(newName)
+            .withEmail("whatever@whatever.com")
             .build()
 
         profileProvider?.setVisitorInfo(visitorInfo,null)

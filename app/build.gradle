@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id("com.google.secrets_gradle_plugin") version "0.6"
 }
 
 android {
@@ -31,6 +32,7 @@ android {
     repositories {
         maven {url 'https://zendesk.jfrog.io/zendesk/repo'}
     }
+    
     kotlinOptions {
         jvmTarget = '1.8'
     }
