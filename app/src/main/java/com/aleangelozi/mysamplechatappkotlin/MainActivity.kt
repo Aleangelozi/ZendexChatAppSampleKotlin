@@ -55,20 +55,11 @@ class MainActivity : AppCompatActivity() {
     private fun initializeVisitorInfo() {
         var visitorSet = false
 
-        val name = "Sofia Angelozi Ribeiro"
+        val name = "Alessandro Angelozi Ribeiro"
 
         val newName = name.substringBefore(' ')
 
         val profileProvider = Chat.INSTANCE.providers()?.profileProvider()
-
-        val visitorInfo = VisitorInfo.builder()
-            .withName(newName)
-            .withEmail("whatever@whatever.com")
-            .build()
-
-        profileProvider?.setVisitorInfo(visitorInfo,null)
-
-
 
         fun setupObserver() {
             val observationScope = ObservationScope()
@@ -82,13 +73,19 @@ class MainActivity : AppCompatActivity() {
                             if (!visitorSet) {
                                 // Add here the code to set the visitor info - visitorInfo would be a VisitorInfo type variable containing all the information to set
                                 val visitorInfo = VisitorInfo.builder()
-                                    .withName(newName)
+                                    .withName(name)
                                     .withEmail("whatever@whatever.com")
                                     .build()
                                 profileProvider?.setVisitorInfo(visitorInfo, null)
                                 visitorSet = true
                             }
                         } else {
+                            val visitorInfo = VisitorInfo.builder()
+                                .withName(name)
+                                .withEmail("whatever@whatever.com")
+                                .build()
+
+                            profileProvider?.setVisitorInfo(visitorInfo,null)
                             // There are few other statuses that you can observe but they are unused in this example
                             Log.d(
                                 "DEBUG",
