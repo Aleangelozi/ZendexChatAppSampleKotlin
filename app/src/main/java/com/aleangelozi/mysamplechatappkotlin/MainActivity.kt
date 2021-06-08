@@ -28,12 +28,6 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate")
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        Log.d(TAG, "onResume")
-    }
-
     private fun initializeChatSdk() {
 
         initializeVisitorInfo()
@@ -56,8 +50,6 @@ class MainActivity : AppCompatActivity() {
         var visitorSet = false
 
         val name = "Alessandro Angelozi Ribeiro"
-
-        val newName = name.substringBefore(' ')
 
         val profileProvider = Chat.INSTANCE.providers()?.profileProvider()
 
