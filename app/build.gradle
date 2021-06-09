@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id("com.google.secrets_gradle_plugin") version "0.6"
 }
 
 android {
@@ -31,6 +32,7 @@ android {
     repositories {
         maven {url 'https://zendesk.jfrog.io/zendesk/repo'}
     }
+    
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -48,6 +50,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //    Zendesk Chat SDK
-    implementation group: 'com.zendesk', name: 'chat', version: '3.1.0'
+    implementation group: 'com.zendesk', name: 'chat', version: '3.2.0'
     implementation group: 'com.zendesk', name: 'messaging', version: '5.1.0'
 }
