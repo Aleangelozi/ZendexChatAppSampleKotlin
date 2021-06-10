@@ -5,10 +5,18 @@ import android.util.Log
 import zendesk.chat.*
 import zendesk.messaging.MessagingActivity
 
-class ChatZenDesk {
+class ChatZenDesk(context: Context) {
     private var visitorSet = false
+    private var context = context
 
-    fun initializeChatSdk(context: Context) {
+    fun initChatZenDesk() {
+        Chat.INSTANCE.init(
+            this.context, BuildConfig.ZENDESK_CHAT_ACCOUNT_KEY,
+            BuildConfig.ZENDEX_APP_ID
+        )
+    }
+
+    fun openChat() {
 
         initVisitorInfo()
 
@@ -23,7 +31,7 @@ class ChatZenDesk {
 
         MessagingActivity.builder()
             .withEngines(ChatEngine.engine())
-            .show(context, chatConfiguration)
+            .show(this.context, chatConfiguration)
     }
 
     private fun initVisitorInfo() {
