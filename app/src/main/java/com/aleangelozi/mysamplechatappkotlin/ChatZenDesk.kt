@@ -23,7 +23,7 @@ class ChatZenDesk {
 
         MessagingActivity.builder()
             .withEngines(ChatEngine.engine())
-            .show(context,chatConfiguration)
+            .show(context, chatConfiguration)
     }
 
     private fun initVisitorInfo() {
@@ -61,13 +61,13 @@ class ChatZenDesk {
             })
 
     }
-        private fun setVisitorInfo(name: String, email: String) : VisitorInfo {
 
-            return VisitorInfo.builder()
-                .withName(name)
-                .withEmail(email)
-                .build()
-        }
+    private fun setVisitorInfo(name: String, email: String): VisitorInfo {
 
+        return VisitorInfo.builder()
+            .withName(name)
+            .withEmail(email)
+            .build()
+    }
 
 }

@@ -10,8 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Chat.INSTANCE.init(this, BuildConfig.ZENDESK_CHAT_ACCOUNT_KEY,
-            BuildConfig.ZENDEX_APP_ID)
+        Chat.INSTANCE.init(
+            this, BuildConfig.ZENDESK_CHAT_ACCOUNT_KEY,
+            BuildConfig.ZENDEX_APP_ID
+        )
 
         val mChatButton = findViewById<Button>(R.id.chat_button)
 
